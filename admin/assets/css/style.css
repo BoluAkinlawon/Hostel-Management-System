@@ -1,0 +1,135 @@
+/* Admin Specific Styles */
+.admin-header { margin-bottom: 1.5rem; }
+.admin-header h2 { margin-bottom: 0.25rem; }
+.admin-header p { color: var(--primary-light); font-size: 0.9rem; }
+
+.admin-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #d7ccc8;
+    padding-bottom: 0;
+}
+.admin-tabs a {
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    color: var(--primary-light);
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+}
+.admin-tabs a.active,
+.admin-tabs a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+    text-align: center;
+}
+.stat-card.accent { border-left-color: var(--accent); }
+.stat-card.success { border-left-color: var(--success); }
+.stat-card.warning { border-left-color: #f9a825; }
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+.stat-card.accent .stat-value { color: var(--accent); }
+.stat-card.success .stat-value { color: var(--success); }
+.stat-card.warning .stat-value { color: #f9a825; }
+.stat-label { font-size: 0.9rem; color: #888; font-weight: 500; }
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+.data-table th {
+    text-align: left;
+    padding: 0.875rem;
+    background: #efebe9;
+    color: var(--primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-light);
+}
+.data-table td {
+    padding: 0.875rem;
+    border-bottom: 1px solid #efebe9;
+}
+.data-table tr:hover { background: #fafafa; }
+
+/* Room Map Grid */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.room-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    border: 1px solid #efebe9;
+}
+.room-card.full { border-left: 4px solid var(--error); }
+.room-card.mid { border-left: 4px solid #f9a825; }
+.room-card.low { border-left: 4px solid var(--success); }
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+.room-id { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+.room-badge {
+    background: #efebe9;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.room-bar {
+    height: 6px;
+    background: #efebe9;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+.room-fill {
+    height: 100%;
+    background: var(--success);
+    border-radius: 3px;
+    transition: width 0.3s;
+}
+.room-card.full .room-fill { background: var(--error); }
+.room-card.mid .room-fill { background: #f9a825; }
+.room-matrics {
+    font-size: 0.8rem;
+    color: #888;
+    word-break: break-all;
+    font-family: monospace;
+}
+
+@media (max-width: 600px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .admin-tabs { overflow-x: auto; }
+    .admin-tabs a { white-space: nowrap; }
+}
